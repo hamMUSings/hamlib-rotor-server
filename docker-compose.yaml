@@ -1,0 +1,11 @@
+services:
+  hamlib-rotor-server:
+    container_name: hamlib-rotor-server
+    image: hammusings/hamlib-rotctld-server:4.6.5
+    ports:
+      - 45330:4533
+    environment:
+      MODEL: '1'
+      BAUD: '9600'
+      devices:
+        "/dev/ttyUSB0:/dev/ttyUSB0"
